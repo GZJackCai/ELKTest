@@ -38,7 +38,7 @@ public class test1 {
 
 
     /**
-     * 基于node client 方式初始化
+     * 基于transport方式初始化
      */
     @Test
     public void test2() throws Exception{
