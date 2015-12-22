@@ -32,7 +32,7 @@ import java.net.UnknownHostException;
  * Created by Jack on 2015/12/22.
  *
  * aggregations
- * bucket
+ * bucket :嵌套统计
  */
 public class test4 {
     Client client;
@@ -58,7 +58,7 @@ public class test4 {
     }
 
     /**
-     * Date Histogram Aggregation
+     * Date Histogram Aggregation：增强型时间
      */
     @Test
     public void test2() throws Exception{
@@ -92,7 +92,7 @@ public class test4 {
 
 
     /**
-     * Date Range Aggregation
+     * Date Range Aggregation  时间范围聚合
      * @throws Exception
      */
     @Test
@@ -122,7 +122,7 @@ public class test4 {
     }
 
     /**
-     * Filter Aggregation
+     * Filter Aggregation: 过滤统计
      */
     @Test
     public void test4() throws Exception{
@@ -223,7 +223,7 @@ public class test4 {
     }
 
     /**
-     *  Histogram Aggregation
+     *  Histogram Aggregation: 可以根据其返回值生成可以用于柱状图的统计数据
      * @throws Exception
      */
     @Test
@@ -247,7 +247,7 @@ public class test4 {
     }
 
     /**
-     * Ip Range Aggregation
+     * Ip Range Aggregation : IP 统计
      * @throws Exception
      */
     @Test
@@ -301,7 +301,7 @@ public class test4 {
     }
 
     /**
-     * Range Aggregation
+     * Range Aggregation  ： 普通随机统计
      */
     @Test
     public void test13() throws Exception{
@@ -382,7 +382,7 @@ public class test4 {
     }
 
     /**
-     *  Terms Aggregation
+     *  Terms Aggregation:  用于对指定字段的内容进行分布统计
      * @throws Exception
      */
     @Test

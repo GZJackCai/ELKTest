@@ -50,7 +50,7 @@ public class test2 {
     }
 
     /**
-     * Bool Query
+     * Bool Query:  由其他类型组合而成的文档匹配类型
      * @throws Exception
      */
     @Test
@@ -58,8 +58,8 @@ public class test2 {
         QueryBuilder qb = QueryBuilders.boolQuery()
                 .must(QueryBuilders.termQuery("content", "test1"))   //必须查询
         .must(QueryBuilders.termQuery("content", "test4"))
-        .mustNot(QueryBuilders.termQuery("content", "test2")) //非必须查询
-        .should(QueryBuilders.termQuery("content", "test3"))  //将查询
+        .mustNot(QueryBuilders.termQuery("content", "test2")) //非必须查询,必须都为非真
+        .should(QueryBuilders.termQuery("content", "test3"))  //可以匹配也可以不匹配
         .filter(QueryBuilders.termQuery("content", "test5")); //匹配文档中必须出现的查询，但对命中得分没有贡献
     }
 
@@ -132,7 +132,7 @@ public class test2 {
     }
 
     /**
-     * Fuzzy Query
+     * Fuzzy Query: 其查询是选择模糊串并选择其产生最好的区分词项
      * @throws Exception
      */
     @Test
@@ -283,7 +283,7 @@ public class test2 {
     }
 
     /**
-     * Match All Query   匹配所有字段
+     * Match All Query   匹配所有字段,相当于select * from
      * @throws Exception
      */
     @Test
@@ -292,7 +292,7 @@ public class test2 {
     }
 
     /**
-     * Match Query
+     * Match Query: 可接受文字、数字和日期等类型的数据
      * @throws Exception
      */
     @Test
@@ -304,7 +304,7 @@ public class test2 {
     }
 
     /**
-     * More Like This Query (mlt)
+     * More Like This Query (mlt)  查询得到与所提供的文本相似的文档
      * @throws Exception
      */
     @Test
@@ -319,7 +319,7 @@ public class test2 {
     }
 
     /**
-     *  Multi Match Query
+     *  Multi Match Query  ： 在多个字段中检索
      * @throws Exception
      */
     @Test
@@ -346,7 +346,7 @@ public class test2 {
     }
 
     /**
-     * Prefix Query
+     * Prefix Query: 查询找到某个字段前缀开头的
      * @throws Exception
      */
     @Test
@@ -358,7 +358,7 @@ public class test2 {
     }
 
     /**
-     * Query String Query
+     * Query String Query  : 查询对查询文本分析后构建一个短语查询 其中的slop参数定义了在查询文本的词项之间应该隔几个才成功
      * @throws Exception
      */
     @Test
@@ -368,7 +368,7 @@ public class test2 {
 
 
     /**
-     * Range Query
+     * Range Query:指定查询范围
      * @throws Exception
      */
     @Test
@@ -376,7 +376,7 @@ public class test2 {
         QueryBuilder qb = QueryBuilders.rangeQuery("price")
         .from(5)
         .to(10)
-        .includeLower(true)
+        .includeLower(true)//是否包含边界
         .includeUpper(false);
 
         // A simplified form using gte, gt, lt or lte
@@ -541,7 +541,8 @@ public class test2 {
     }
 
     /**
-     *  Term Query
+     *  Term Query: term 查询仅匹配给定字段有某个词项的文档
+     *  若要提升重要性，要加boost
      */
     @Test
     public void test39() throws Exception{
@@ -552,7 +553,7 @@ public class test2 {
     }
 
     /**
-     * Terms Query
+     * Terms Query: terms 查询允许包含某些词
      */
     @Test
     public void test40() throws Exception{
@@ -570,7 +571,7 @@ public class test2 {
     }
 
     /**
-     * Wildcard Query
+     * Wildcard Query： 允许查询内容使用通配符
      */
     @Test
     public void test42() throws Exception{

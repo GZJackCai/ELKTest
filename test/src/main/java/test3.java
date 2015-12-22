@@ -40,7 +40,7 @@ public class test3 {
                 .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("localhost"), 9300));//初始化es,2.x语法
     }
     /**
-     *  Bulk API
+     *  Bulk API  ：批量操作索引文件
      * @throws Exception
      */
     @Test

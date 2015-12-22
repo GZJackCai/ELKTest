@@ -200,7 +200,7 @@ public class test5 {
     }
 
     /**
-     * Stats Aggregation
+     * Stats Aggregation： 多值统计-返回值包括最大值，最小值，求和，计数，均值
      */
     @Test
     public void test9() throws Exception{
